@@ -1,0 +1,276 @@
+/* Squid Game-Themed Expanded Stylesheet */
+/* Root Variables for Theming - Inspired by Primary Palette (Pink/Green) and Symbolism */
+:root {
+    --sg-pink: #FF69B4; /* Guard uniforms: Menace with playfulness */
+    --sg-green: #228B22; /* Player tracksuits: Vulnerability and unity */
+    --sg-blue: #1E90FF; /* Secondary accents: Cool contrast */
+    --sg-yellow: #FFD700; /* Wealth/excess symbolism: Piggy bank, riches */
+    --sg-red: #FF0000; /* Danger/urgency: Blood, alerts */
+    --sg-black: #000000; /* Mystery/authority: Masks, Frontman */
+    --sg-dark-shadow: rgba(0, 0, 0, 0.8); /* Deeper shadows for Season 3's brutal tone */
+    --sg-light-shadow: rgba(255, 255, 255, 0.2); /* Subtle highlights for nostalgia */
+    --sg-gradient-bg: linear-gradient(to bottom, var(--sg-pink) 0%, var(--sg-green) 100%); /* Unease blend */
+    --sg-font-family: 'Roboto', Arial, sans-serif; /* Clean, geometric sans-serif for minimalism */
+    --sg-font-size-base: 16px;
+    --sg-transition: all 0.3s ease-in-out; /* Smooth for tension-building interactions */
+    --sg-border-radius: 8px; /* Soft geometry */
+}
+
+/* Global Resets and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--sg-black); /* Dark void for mystery */
+    color: #fff; /* High contrast for readability */
+    font-family: var(--sg-font-family);
+    font-size: var(--sg-font-size-base);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll in immersive simulator */
+}
+
+/* Container for Centered Layout - Mimics Game Arena */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--sg-gradient-bg); /* Playful yet oppressive gradient */
+    border: 2px solid var(--sg-red); /* Danger border */
+    border-radius: var(--sg-border-radius);
+    box-shadow: 0 4px 15px var(--sg-dark-shadow); /* Depth for unease */
+    position: relative; /* For pseudo-elements */
+}
+
+/* Pseudo-Element for Overlay Effect - Symbolizing Masked Hierarchy */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 50%, var(--sg-dark-shadow) 100%); /* Fading mystery */
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* Headings - Bold, Centered, with Red Danger Accents */
+h1 {
+    color: var(--sg-red);
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px var(--sg-black); /* Shadow for depth */
+    animation: pulse 2s infinite; /* Subtle heartbeat for tension */
+}
+
+h2, h3 {
+    color: var(--sg-yellow); /* Wealth symbolism */
+    margin-top: 20px;
+}
+
+/* Scene Classes - For Narrative Immersion, with Geometric Borders */
+.scene {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent for layers */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--sg-green); /* Player-side accent */
+    border-radius: var(--sg-border-radius);
+    box-shadow: inset 0 2px 5px var(--sg-light-shadow);
+    transition: var(--sg-transition);
+}
+
+.scene:hover {
+    transform: scale(1.02); /* Slight zoom for interactivity */
+    border-color: var(--sg-pink); /* Shift to guard theme on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Buttons - Shaped for Hierarchy (Circle, Triangle, Square Inspired) */
+button {
+    background: var(--sg-red); /* Base danger color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--sg-transition);
+    box-shadow: 0 2px 5px var(--sg-dark-shadow);
+    position: relative; /* For pseudo-shapes */
+}
+
+button:hover {
+    background: darken(var(--sg-red), 20%); /* Darker for brutality (Season 3 vibe) */
+    transform: translateY(-2px); /* Lift for engagement */
+}
+
+button:focus {
+    outline: 2px solid var(--sg-blue); /* Accessibility contrast */
+}
+
+/* Shape Variants - Geometric Masks Symbolism */
+button.circle {
+    border-radius: 50%; /* Worker level */
+    padding: 15px;
+}
+
+button.triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Soldier aggression */
+}
+
+button.square {
+    border-radius: 0; /* Manager structure */
+}
+
+/* Outcome and Score Displays - Yellow for Prize/Wealth Focus */
+#outcome {
+    background: var(--sg-yellow);
+    color: var(--sg-black);
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: var(--sg-border-radius);
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+#score {
+    text-align: center;
+    font-weight: bold;
+    color: var(--sg-green);
+    margin-bottom: 20px;
+    border: 1px dashed var(--sg-pink); /* Dashed for game boundary */
+}
+
+/* Links - Blue Accents for Navigation */
+a {
+    color: var(--sg-blue);
+    text-decoration: none;
+    transition: var(--sg-transition);
+}
+
+a:hover {
+    color: var(--sg-yellow);
+    text-decoration: underline;
+}
+
+/* Lists and Tables - For Episode Menus, Clean Geometric Layout */
+ul#episodes {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul#episodes li {
+    margin: 10px 0;
+}
+
+ul#episodes a {
+    display: block;
+    background: var(--sg-pink);
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--sg-border-radius);
+    transition: var(--sg-transition);
+}
+
+ul#episodes a:hover {
+    background: var(--sg-red);
+}
+
+/* Animations - For Tension and Immersion */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design - Media Queries for Mobile Games */
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+    
+    button {
+        width: 100%; /* Full-width for touch */
+        margin: 10px 0;
+    }
+    
+    h1 {
+        font-size: 1.5rem; /* Scale down */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+    
+    .scene {
+        padding: 20px; /* More space on tablets */
+    }
+}
+
+/* Accessibility Enhancements */
+[aria-hidden="true"] {
+    display: none;
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+/* Hypothetical Branch Styles - Desaturated for Non-Canon */
+.hypothetical {
+    opacity: 0.7; /* Faded for distinction */
+    border: 1px dotted var(--sg-blue); /* Mystery dotted line */
+}
+
+/* Endings - Varied Backgrounds for Outcomes */
+.end-good {
+    background: var(--sg-green); /* Positive, player win */
+    color: #fff;
+}
+
+.end-bad {
+    background: var(--sg-red); /* Negative, greed failure */
+    color: #fff;
+}
+
+.end-neutral {
+    background: var(--sg-yellow); /* Ambiguous, wealth tease */
+    color: var(--sg-black);
+}
+
+/* Additional Utility Classes - For Extended Simulator Features */
+.warning {
+    color: var(--sg-red);
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.alliance-meter {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, var(--sg-red) 0%, var(--sg-green) 100%);
+    border-radius: var(--sg-border-radius);
+}
+
+.death-flag {
+    color: var(--sg-black);
+    background: var(--sg-pink);
+    padding: 5px;
+    border-radius: 50%; /* Circular for death symbolism */
+}
