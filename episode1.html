@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 1: Keys and Knives</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Episode 1: Keys and Knives</h1>
+        <p>Post-infiltration failure. Gi-hun seethes at Dae-ho's betrayal. No-eul hides Kyung-seok. Choose wisely—alliances fracture here.</p>
+        
+        <div id="scene1" class="scene">
+            <p>Scene 1: The break room reeks of blood. Dae-ho cowers. "It's your fault," he whimpers. Rage boils—what do you do?</p>
+            <button onclick="handleChoice('Strangle Dae-ho (Canon rage)', -10, 'scene2', ''); showScene('scene2');">Strangle him [-10 Humanity]</button>
+            <button onclick="handleChoice('Forgive & ally [Hypothetical redemption]', +15, 'scene3');">Forgive & form pact [+15]</button>
+            <button onclick="handleChoice('Interrogate for intel', +5, 'scene4');">Demand organ harvest details [+5]</button>
+        </div>
+        
+        <div id="scene2" class="scene hidden">
+            <p>Scene 2: Hands around his throat. "Your fault." Guilt lingers as guards drag the body. No-eul whispers: Fake death for Kyung-seok?</p>
+            <button onclick="handleChoice('Aid No-eul (Protect ally)', +20, 'end1');">Help disguise him [+20]</button>
+            <button onclick="handleChoice('Betray to guards [-Greed]', -15, 'end2');">Sell out for favor [-15]</button>
+        </div>
+        
+        <!-- Additional scenes: 4 total, with branches to 3 endings (e.g., rebellion success if score >70) -->
+        <div id="scene3" class="scene hidden"><!-- Hypothetical pact leads to early uprising --></div>
+        <div id="scene4" class="scene hidden"><!-- Intel reveals VIPs --></div>
+        
+        <div id="end1" class="scene hidden"><p>Ending 1: Alliance holds. But the maze awaits. <a href="episode2.html">Next Episode</a></p></div>
+        <div id="end2" class="scene hidden"><p>Ending 2: Betrayal bites back. Isolated. <a href="episode2.html">Next</a></p></div>
+        <div id="end3" class="scene hidden"><p>Ending 3: Uprising sparks [Hypo]! Chaos averted. <a href="episode2.html">Next</a></p></div>
+        
+        <div id="outcome"></div>
+        <a href="index.html">Back to Menu</a>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        showScene('scene1'); // Auto-start
+    </script>
+</body>
+</html>

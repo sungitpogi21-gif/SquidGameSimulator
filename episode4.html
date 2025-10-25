@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 4: 222</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Episode 4: 222</h1>
+        <p>Baby crowned Player 222. Front Man unmasks as Young-il, tempts with knife deal. Boat carnage ensues. Warning: Infanticide threats and identity crises.</p>
+        
+        <div id="scene1" class="scene">
+            <p>Scene 1: Infant wails as player. Front Man reveals: "Join or perish." Jun-ho's boat nears. Decide?</p>
+            <button onclick="handleChoice('Refuse deal (Canon integrity)', +15, 'scene2');">Reject offer [+15]</button>
+            <button onclick="handleChoice('Accept knife [Mass murder]', -25, 'scene3');">Embrace darkness [-25]</button>
+            <button onclick="handleChoice('Aid Jun-ho rescue', +20, 'scene4');">Signal brother [+20]</button>
+            <button onclick="handleChoice('Assassinate Front Man [Hypo coup]', -10, 'scene5', '[Hypothetical]');">Strike leader [-10]</button>
+            <button onclick="handleChoice('Eliminate baby threat [Greed]', -20, 'scene6', '[Hypothetical]');">Remove collateral [-20]</button>
+        </div>
+        
+        <div id="scene2" class="scene hidden">
+            <p>Scene 2: Refusal sparks shootout. Captain Park impaled. Myung-gi eyes baby hungrily. Protect?</p>
+            <button onclick="handleChoice('Defend infant [Heroism]', +25, 'end1');">Fight father [+25]</button>
+            <button onclick="handleChoice('Entrust to No-eul', +10, 'end2');">Delegate [+10]</button>
+        </div>
+        
+        <div id="scene3" class="scene hidden">
+            <p>Scene 3: Knife taken; sleepers targeted. Guilt floods—proceed?</p>
+            <button onclick="handleChoice('Complete killings [Descent]', -30, 'end3');">Finish task [-30]</button>
+            <button onclick="handleChoice('Betray deal [Redemption]', +5, 'end4');">Turn back [+5]</button>
+        </div>
+        
+        <div id="scene4" class="scene hidden">
+            <p>Scene 4: Signal flares; Jun-ho harpoons foe. Identity shatters trust. Ally or confront?</p>
+            <button onclick="handleChoice('Unite with brother', +20, 'end1');">Family bond [+20]</button>
+            <button onclick="handleChoice('Exploit chaos [Greed]', -15, 'end3');">Seize power [-15]</button>
+        </div>
+        
+        <div id="scene5" class="scene hidden">
+            <p>Scene 5: Strike lands; Front Man falls. Power vacuum—claim role?</p>
+            <button onclick="handleChoice('Become new leader [Hypo twist]', -20, 'end3', '[Hypothetical]');">Assume control [-20]</button>
+            <button onclick="handleChoice('Destroy system', +25, 'end4');">End games [+25]</button>
+        </div>
+        
+        <div id="scene6" class="scene hidden">
+            <p>Scene 6: Threat removed; prize secured. But humanity erodes—reflect?</p>
+            <button onclick="handleChoice('Regret action', +5, 'end2');">Seek atonement [+5]</button>
+            <button onclick="handleChoice('Double down [Evil]', -25, 'end3');">Embrace [-25]</button>
+        </div>
+        
+        <div id="end1" class="scene hidden"><p>Ending 1: Protection triumphs; arcs converge. <a href="episode5.html">Next</a></p></div>
+        <div id="end2" class="scene hidden"><p>Ending 2: Refusal echoes; tensions rise. <a href="episode5.html">Next</a></p></div>
+        <div id="end3" class="scene hidden"><p>Ending 3: Darkness prevails; losses mount. <a href="episode5.html">Next</a></p></div>
+        <div id="end4" class="scene hidden"><p>Ending 4: Defection sparks [Hypo hope]. <a href="episode5.html">Next</a></p></div>
+        
+        <div id="outcome"></div>
+        <a href="index.html">Back to Menu</a>
+    </div>
+    <script src="script.js"></script>
+    <script>showScene('scene1');</script>
+</body>
+</html>

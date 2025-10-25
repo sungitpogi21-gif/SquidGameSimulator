@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 3: It's Not Your Fault</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Episode 3: It's Not Your Fault</h1>
+        <p>VIPs descend, betting on despair. Geum-ja hangs in suicide; Jump Rope claims Jun-hee. Infant as collateral. Warning: Suicide and child endangerment themes.</p>
+        
+        <div id="scene1" class="scene">
+            <p>Scene 1: Rope sways over abyss. VIP laughter echoes. Geum-ja pleads for mercy on her knees. Respond?</p>
+            <button onclick="handleChoice('Beg VIPs (Canon plea)', -5, 'scene2');">Implore spectators [-5]</button>
+            <button onclick="handleChoice('Shove rival off [Violence]', -20, 'scene3');">Eliminate threat [-20]</button>
+            <button onclick="handleChoice('Protect infant first [Priority]', +15, 'scene4');">Guard baby [+15]</button>
+            <button onclick="handleChoice('Suicide pact with Geum-ja [Hypo despair]', -10, 'scene5', '[Hypothetical]');">End together [-10]</button>
+            <button onclick="handleChoice('Expose baby as leverage [Greed]', -15, 'scene6', '[Hypothetical]');">Bargain life [-15]</button>
+        </div>
+        
+        <div id="scene2" class="scene hidden">
+            <p>Scene 2: Pleas ignored; Geum-ja loops rope. Jun-hee leaps to entrust baby. Intervene?</p>
+            <button onclick="handleChoice('Catch Jun-hee [Save mother]', +20, 'end1');">Risk fall [+20]</button>
+            <button onclick="handleChoice('Accept sacrifice [Canon]', -10, 'end2');">Honor choice [-10]</button>
+        </div>
+        
+        <div id="scene3" class="scene hidden">
+            <p>Scene 3: Rival plummets; prize swells. VIPs applaud. Guilt surges—push more?</p>
+            <button onclick="handleChoice('Continue shoving [Descent]', -25, 'end3');">Escalate [-25]</button>
+            <button onclick="handleChoice('Regret & protect', +5, 'end1');">Redeem [+5]</button>
+        </div>
+        
+        <div id="scene4" class="scene hidden">
+            <p>Scene 4: Baby cradled as rope frays. Geum-ja's final words: "It's not your fault." Honor her?</p>
+            <button onclick="handleChoice('Prevent suicide [Empathy]', +25, 'end2');">Save elder [+25]</button>
+            <button onclick="handleChoice('Let go [Mercy]', -5, 'end3');">Allow peace [-5]</button>
+        </div>
+        
+        <div id="scene5" class="scene hidden">
+            <p>Scene 5: Pact sealed; dual hangs. But baby cries—abort?</p>
+            <button onclick="handleChoice('Survive for child', +10, 'end1');">Pull back [+10]</button>
+            <button onclick="handleChoice('Complete pact [End]', -30, 'end3');">Follow through [-30]</button>
+        </div>
+        
+        <div id="scene6" class="scene hidden">
+            <p>Scene 6: Baby offered; VIPs intrigued. Betrayal complete—gain favor?</p>
+            <button onclick="handleChoice('Overthrow VIPs [Hypo rebellion]', +15, 'end4', '[Hypothetical]');">Revolt [+15]</button>
+            <button onclick="handleChoice('Secure prize [Greed win]', -20, 'end3');">Claim share [-20]</button>
+        </div>
+        
+        <div id="end1" class="scene hidden"><p>Ending 1: Protection holds; hope flickers. <a href="episode4.html">Next</a></p></div>
+        <div id="end2" class="scene hidden"><p>Ending 2: Sacrifice echoes; isolation deepens. <a href="episode4.html">Next</a></p></div>
+        <div id="end3" class="scene hidden"><p>Ending 3: Greed consumes; failures mount. <a href="episode4.html">Next</a></p></div>
+        <div id="end4" class="scene hidden"><p>Ending 4: Rebellion ignites [Hypo]. <a href="episode4.html">Next</a></p></div>
+        
+        <div id="outcome"></div>
+        <a href="index.html">Back to Menu</a>
+    </div>
+    <script src="script.js"></script>
+    <script>showScene('scene1');</script>
+</body>
+</html>

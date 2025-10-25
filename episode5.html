@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 5: ○△□</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Episode 5: ○△□</h1>
+        <p>Sky platforms teeter. Flashbacks haunt; No-eul torches records; pushes and suicides mount. Warning: Psychological torment and self-harm.</p>
+        
+        <div id="scene1" class="scene">
+            <p>Scene 1: Towers sway; hallucinations of Sae-byeok warn. Front Man's past murders flicker. Act?</p>
+            <button onclick="handleChoice('Spare sleepers (Canon mercy)', +15, 'scene2');">Show restraint [+15]</button>
+            <button onclick="handleChoice('Push off [Violence]', -20, 'scene3');">Eliminate [-20]</button>
+            <button onclick="handleChoice('Burn records with No-eul', +10, 'scene4');">Destroy evidence [+10]</button>
+            <button onclick="handleChoice('Trigger guard uprising [Hypo revolt]', +20, 'scene5', '[Hypothetical]');">Incited mutiny [+20]</button>
+            <button onclick="handleChoice('Heed hallucination to betray [Madness]', -15, 'scene6', '[Hypothetical]');">Follow vision [-15]</button>
+        </div>
+        
+        <div id="scene2" class="scene hidden">
+            <p>Scene 2: Mercy granted; alliances form. Player 039 leaps in defiance. Honor or exploit?</p>
+            <button onclick="handleChoice('Prevent leap [Save]', +25, 'end1');">Intervene [+25]</button>
+            <button onclick="handleChoice('Let fall [Canon]', -5, 'end2');">Accept [-5]</button>
+        </div>
+        
+        <div id="scene3" class="scene hidden">
+            <p>Scene 3: Body tumbles; score drops. Hallucinations intensify—continue?</p>
+            <button onclick="handleChoice('More pushes [Descent]', -25, 'end3');">Rampage [-25]</button>
+            <button onclick="handleChoice('Stop & reflect', +5, 'end1');">Redeem [+5]</button>
+        </div>
+        
+        <div id="scene4" class="scene hidden">
+            <p>Scene 4: Flames consume files; freedom nears. Jun-ho executes guards. Aid?</p>
+            <button onclick="handleChoice('Join rescue [Hope]', +20, 'end2');">Support [+20]</button>
+            <button onclick="handleChoice('Sabotage [Greed]', -15, 'end3');">Betray [-15]</button>
+        </div>
+        
+        <div id="scene5" class="scene hidden">
+            <p>Scene 5: Guards turn; chaos erupts. Lead the charge?</p>
+            <button onclick="handleChoice('Overthrow system [Hypo victory]', +25, 'end4');">Rebel [+25]</button>
+            <button onclick="handleChoice('Exploit for escape', -10, 'end3');">Selfish [-10]</button>
+        </div>
+        
+        <div id="scene6" class="scene hidden">
+            <p>Scene 6: Vision commands betrayal. Group turns—follow through?</p>
+            <button onclick="handleChoice('Complete madness', -30, 'end3');">Descend [-30]</button>
+            <button onclick="handleChoice('Snap out [Recovery]', +10, 'end1');">Resist [+10]</button>
+        </div>
+        
+        <div id="end1" class="scene hidden"><p>Ending 1: Mercy prevails; paths open. <a href="episode6.html">Next</a></p></div>
+        <div id="end2" class="scene hidden"><p>Ending 2: Alliances hold; tensions build. <a href="episode6.html">Next</a></p></div>
+        <div id="end3" class="scene hidden"><p>Ending 3: Fractures deepen; despair wins. <a href="episode6.html">Next</a></p></div>
+        <div id="end4" class="scene hidden"><p>Ending 4: Uprising succeeds [Hypo]. <a href="episode6.html">Next</a></p></div>
+        
+        <div id="outcome"></div>
+        <a href="index.html">Back to Menu</a>
+    </div>
+    <script src="script.js"></script>
+    <script>showScene('scene1');</script>
+</body>
+</html>

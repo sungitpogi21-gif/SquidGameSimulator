@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 2: The Starry Night</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Episode 2: The Starry Night</h1>
+        <p>Labyrinthine maze under starry lights. Chaos erupts: Dae-ho's betrayal fuels Gi-hun's rage; Jun-hee labors in agony; stabbings and mercy killings abound. Warning: Themes of violence and familial betrayal.</p>
+        
+        <div id="scene1" class="scene">
+            <p>Scene 1: The maze walls close in, knives glint. Dae-ho pleads as Gi-hun approaches, fury boiling from the failed rebellion. Jun-hee's cries echo—labor begins. What path do you take?</p>
+            <button onclick="handleChoice('Strangle Dae-ho (Canon rage)', -15, 'scene2');">Strangle betrayer [-15 Humanity]</button>
+            <button onclick="handleChoice('Aid Jun-hee\'s birth [Protect vulnerable]', +20, 'scene3');">Rush to help labor [+20]</button>
+            <button onclick="handleChoice('Hunt Myung-gi for intel', +5, 'scene4');">Pursue rival [+5]</button>
+            <button onclick="handleChoice('Mercy-kill wounded Hyun-ju [Hypo: End suffering]', -10, 'scene5', '[Hypothetical]');">Ease ally's pain [-10]</button>
+        </div>
+        
+        <div id="scene2" class="scene hidden">
+            <p>Scene 2: Throat crushed, Dae-ho gasps his last. Guilt mixes with survival high. Geum-ja watches, her son Yong-sik plotting nearby. Intervene in their confrontation?</p>
+            <button onclick="handleChoice('Stop Geum-ja\'s kill [Save family]', +15, 'end1');">Prevent maternal violence [+15]</button>
+            <button onclick="handleChoice('Join spree for prize [Greed]', -20, 'end2');">Escalate killings [-20]</button>
+            <button onclick="handleChoice('Secret exit with betrayer [Hypo alliance]', +10, 'end3', '[Hypothetical]');">Forge pact [+10]</button>
+        </div>
+        
+        <div id="scene3" class="scene hidden">
+            <p>Scene 3: Hands steady Jun-hee through birth screams. Baby emerges amid blood—Player 222? Hyun-ju staggers, stabbed by Myung-gi. Defend or flee?</p>
+            <button onclick="handleChoice('Fight Myung-gi [Heroism]', +25, 'end4');">Confront attacker [+25]</button>
+            <button onclick="handleChoice('Abandon to save baby [Sacrifice]', -5, 'end1');">Prioritize infant [-5]</button>
+        </div>
+        
+        <div id="scene4" class="scene hidden">
+            <p>Scene 4: Myung-gi cornered, spills VIP secrets. But Geum-ja stabs her son in despair. Betray group with info?</p>
+            <button onclick="handleChoice('Share intel [Alliance]', +10, 'end3');">Build trust [+10]</button>
+            <button onclick="handleChoice('Use for personal gain [Betrayal]', -15, 'end2');">Hoard knowledge [-15]</button>
+        </div>
+        
+        <div id="scene5" class="scene hidden">
+            <p>Scene 5: Hyun-ju's eyes plead release. Knife slips—mercy or murder? Chaos swirls as birth completes.</p>
+            <button onclick="handleChoice('Regret & protect baby', +5, 'end4');">Guard newborn [+5]</button>
+            <button onclick="handleChoice('Escalate violence [Descent]', -25, 'end2');">Join the spree [-25]</button>
+        </div>
+        
+        <div id="end1" class="scene hidden"><p>Ending 1: Baby safe, but trust fractures. <a href="episode3.html">Next Episode</a></p></div>
+        <div id="end2" class="scene hidden"><p>Ending 2: Spree claims more; isolation reigns. <a href="episode3.html">Next</a></p></div>
+        <div id="end3" class="scene hidden"><p>Ending 3: Uprising hints [Hypo success]. <a href="episode3.html">Next</a></p></div>
+        <div id="end4" class="scene hidden"><p>Ending 4: Heroism shines; alliances hold. <a href="episode3.html">Next</a></p></div>
+        
+        <div id="outcome"></div>
+        <a href="index.html">Back to Menu</a>
+    </div>
+    <script src="script.js"></script>
+    <script>showScene('scene1');</script>
+</body>
+</html>

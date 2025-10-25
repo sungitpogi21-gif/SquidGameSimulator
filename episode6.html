@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episode 6: Humans Are...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Episode 6: Humans Are...</h1>
+        <p>Final towers: Myung-gi knives Gi-hun over baby; sacrifice declares "humans, not horses." Island explodes; global hint. Warning: Infanticide and existential themes.</p>
+        
+        <div id="scene1" class="scene">
+            <p>Scene 1: Knife brawl atop tower. Myung-gi targets his child. Front Man watches. Intervene?</p>
+            <button onclick="handleChoice('Fight Myung-gi (Canon defense)', +20, 'scene2');">Protect baby [+20]</button>
+            <button onclick="handleChoice('Press button sacrifice [Heroism]', +25, 'scene3');">End self [+25]</button>
+            <button onclick="handleChoice('Evacuate island', +10, 'scene4');">Flee chaos [+10]</button>
+            <button onclick="handleChoice('Expose games globally [Hypo leak]', +15, 'scene5', '[Hypothetical]');">Broadcast [+15]</button>
+            <button onclick="handleChoice('Aid infanticide [Ultimate greed]', -30, 'scene6', '[Hypothetical]');">Betray all [-30]</button>
+            <button onclick="handleChoice('Trigger destruction early [Annihilation]', -20, 'scene7', '[Hypothetical]');">Blow up [-20]</button>
+        </div>
+        
+        <div id="scene2" class="scene hidden">
+            <p>Scene 2: Brawl won; baby safe. Gi-hun's speech rings. Declare humanity?</p>
+            <button onclick="handleChoice('Echo speech [Inspire]', +20, 'end1');">Proclaim [+20]</button>
+            <button onclick="handleChoice('Silent victory [Canon]', +5, 'end2');">Quiet win [+5]</button>
+        </div>
+        
+        <div id="scene3" class="scene hidden">
+            <p>Scene 3: Fall taken; island quakes. Legacy secured—reflect?</p>
+            <button onclick="handleChoice('Accept fate [Martyr]', +25, 'end3');">Embrace [+25]</button>
+            <button onclick="handleChoice('Survive fall [Hypo twist]', +10, 'end4', '[Hypothetical]');">Cling on [+10]</button>
+        </div>
+        
+        <div id="scene4" class="scene hidden">
+            <p>Scene 4: Evacuation underway; Front Man flees. Pursue?</p>
+            <button onclick="handleChoice('Chase leader', +15, 'end2');">Confront [+15]</button>
+            <button onclick="handleChoice('Let escape [Mercy]', -5, 'end1');">Release [-5]</button>
+        </div>
+        
+        <div id="scene5" class="scene hidden">
+            <p>Scene 5: Broadcast sent; world watches. Cycle breaks?</p>
+            <button onclick="handleChoice('Expose fully [Victory]', +30, 'end4');">Reveal all [+30]</button>
+            <button onclick="handleChoice('Partial leak [Caution]', +10, 'end3');">Limit info [+10]</button>
+        </div>
+        
+        <div id="scene6" class="scene hidden">
+            <p>Scene 6: Deed done; prize claimed. Darkness complete—revel?</p>
+            <button onclick="handleChoice('Embrace evil', -25, 'end3');">Descend [-25]</button>
+            <button onclick="handleChoice('Regret [Redemption arc]', +5, 'end1');">Atone [+5]</button>
+        </div>
+        
+        <div id="scene7" class="scene hidden">
+            <p>Scene 7: Explosion rages; all perish. End justified?</p>
+            <button onclick="handleChoice('Accept annihilation', -30, 'end3');">Justify [-30]</button>
+            <button onclick="handleChoice('Abort at last [Save]', +15, 'end4');">Pull back [+15]</button>
+        </div>
+        
+        <div id="end1" class="scene hidden"><p>Ending 1: Humanity affirmed; cycle hints break. <a href="index.html">Menu</a></p></div>
+        <div id="end2" class="scene hidden"><p>Ending 2: Victory bittersweet; global tease. <a href="index.html">Menu</a></p></div>
+        <div id="end3" class="scene hidden"><p>Ending 3: Despair triumphs; losses eternal. <a href="index.html">Menu</a></p></div>
+        <div id="end4" class="scene hidden"><p>Ending 4: New paths open [Hypo resolution]. <a href="index.html">Menu</a></p></div>
+        
+        <div id="outcome"></div>
+        <a href="index.html">Back to Menu</a>
+    </div>
+    <script src="script.js"></script>
+    <script>showScene('scene1');</script>
+</body>
+</html>
